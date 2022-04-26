@@ -46,11 +46,6 @@ public class Book {
   }
 
   @Override
-  public boolean equals(final Object obj) {
-    return ObjectUtils.equals(this, (Book) obj, Book::getIsbn, Book::getTitle);
-  }
-
-  @Override
   public String toString() {
     return "[Book " + isbn + " - " + title + "]";
   }
