@@ -48,8 +48,7 @@ public class MainLayout extends AppLayout {
                 new RouterLink("TwitchChannel", TwitchChannelView.class),
                 new RouterLink("TwitchUser", TwitchUserView.class),
                 new RouterLink("NFT", NFTView.class),
-                new RouterLink("ChartsView", ChartsView.class),
-                new RouterLink("Rubiks", RubikView.class)
+                new RouterLink("ChartsView", ChartsView.class)
         ));
     }
 }

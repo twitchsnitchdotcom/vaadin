@@ -43,7 +43,7 @@ public class TwitchChannelView extends VerticalLayout {
     public TwitchChannelView() {
         addClassName("dashboard-view");
         setDefaultHorizontalComponentAlignment(Alignment.CENTER);
-        add(addBasicChat(), addChatWithCustomLoading(), richTextEditor(), timeline(), googleMaps());
+        add(richTextEditor(), timeline(), googleMaps());
         // Component erstellen
         StarsRating starsRating = new StarsRating();
         // Listener Hinzufügen
