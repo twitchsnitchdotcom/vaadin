@@ -22,4 +22,8 @@ public class Application extends SpringBootServletInitializer implements AppShel
         LaunchUtil.launchBrowserInDevelopmentMode(SpringApplication.run(Application.class, args));
     }
 
+    //https://vaadin.com/directory/component/googleanalyticstracker/samples
+    //https://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/maps/demo/diamondmap
+    //https://vaadin.com/directory/component/google-maps-addon
+
 }
