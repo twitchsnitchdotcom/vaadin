@@ -119,6 +119,82 @@
                 </exclusion>
             </exclusions>
         </dependency>
+
+
+        <dependency>
+            <groupId>guru.nidi</groupId>
+            <artifactId>graphviz-java</artifactId>
+            <version>0.18.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.vaadin.addons.componentfactory</groupId>
+            <artifactId>vcf-splide</artifactId>
+            <version>1.0.1</version>
+        </dependency>
+
+
+<!--        <dependency>-->
+<!--            <groupId>de.f0rce.viz</groupId>-->
+<!--            <artifactId>viz</artifactId>-->
+<!--            <version>2.1.1</version>-->
+<!--        </dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>com.storedobject.chart</groupId>-->
+<!--            <artifactId>so-charts</artifactId>-->
+<!--            <version>2.4.1</version>-->
+<!--        </dependency>-->
+
+<!--        <dependency>-->
+<!--            <groupId>org.vaadin.miki</groupId>-->
+<!--            <artifactId>superfields</artifactId>-->
+<!--            <version>0.13.0</version>-->
+<!--        </dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>org.vaadin.addons.componentfactory</groupId>-->
+<!--            <artifactId>autosuggest</artifactId>-->
+<!--            <version>1.2.0</version>-->
+<!--        </dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>com.vaadin.componentfactory</groupId>-->
+<!--            <artifactId>selection-grid-flow</artifactId>-->
+<!--            <version>2.0.0</version>-->
+<!--        </dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>org.vaadin.addon</groupId>-->
+<!--            <artifactId>vaadin-driver-js</artifactId>-->
+<!--            <version>1.0.1</version>-->
+<!--        </dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>com.vaadin.componentfactory</groupId>-->
+<!--            <artifactId>chat</artifactId>-->
+<!--            <version>2.0.1</version>-->
+<!--        </dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>com.vaadin.componentfactory</groupId>-->
+<!--            <artifactId>enhanced-rich-text-editor</artifactId>-->
+<!--            <version>2.4.4</version>-->
+<!--        </dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>de.mekaso.vaadin.addons</groupId>-->
+<!--            <artifactId>carousel</artifactId>-->
+<!--            <version>0.8.0</version>-->
+<!--        </dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>org.vaadin.addons.componentfactory</groupId>-->
+<!--            <artifactId>vcf-timeline</artifactId>-->
+<!--            <version>1.0.0</version>-->
+<!--        </dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>org.vaadin.stefan</groupId>-->
+<!--            <artifactId>fullcalendar2-scheduler</artifactId>-->
+<!--            <version>4.1.2</version>-->
+<!--        </dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>org.vaadin.addons.componentfactory</groupId>-->
+<!--            <artifactId>masked-text-field</artifactId>-->
+<!--            <version>0.0.4</version>-->
+<!--        </dependency>-->
+
         <dependency>
             <groupId>org.vaadin.artur</groupId>
             <artifactId>a-vaadin-helper</artifactId>

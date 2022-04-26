@@ -44,7 +44,10 @@ public class MainLayout extends AppLayout {
 
         addToDrawer(new VerticalLayout(
             listLink,
-            new RouterLink("Dashboard", DashboardView.class)
+            new RouterLink("Dashboard", DashboardView.class),
+                new RouterLink("TwitchChannel", TwitchChannelView.class),
+                new RouterLink("TwitchUser", TwitchUserView.class),
+                new RouterLink("NFT", NFTView.class)
         ));
     }
 }
