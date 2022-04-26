@@ -1,6 +1,7 @@
 package com.example.application.views;
 
 import com.example.application.data.service.CrmService;
+import com.storedobject.chart.*;
 import com.vaadin.componentfactory.addons.splide.ImageSlide;
 import com.vaadin.componentfactory.addons.splide.Splide;
 import com.vaadin.flow.component.Component;
@@ -28,7 +29,7 @@ public class NFTView extends VerticalLayout {
         this.service = service;
         addClassName("dashboard-view");
         setDefaultHorizontalComponentAlignment(Alignment.CENTER);
-        add(viz(), slider());
+        add(viz(), slider(), chart());
     }
 
     private Component viz() {
@@ -38,6 +39,46 @@ public class NFTView extends VerticalLayout {
         return viz;
     }
 
+    public Component chart(){
+
+        SOChart soChart = new SOChart();
+        soChart.setSize("800px", "500px");
+
+        // Let us define some inline data.
+        CategoryData labels = new CategoryData("Banana", "Apple", "Orange", "Grapes");
+        Data data = new Data(25, 40, 20, 30);
+
+// We are going to create a couple of charts. So, each chart should be positioned
+// appropriately.
+// Create a self-positioning chart.
+        NightingaleRoseChart nc = new NightingaleRoseChart(labels, data);
+        Position p = new Position();
+        p.setTop(Size.percentage(50));
+        nc.setPosition(p); // Position it leaving 50% space at the top
+
+// Second chart to add.
+        BarChart bc = new BarChart(labels, data);
+        RectangularCoordinate rc;
+        rc  = new RectangularCoordinate(new XAxis(DataType.CATEGORY), new YAxis(DataType.NUMBER));
+        p = new Position();
+        p.setBottom(Size.percentage(55));
+        rc.setPosition(p); // Position it leaving 55% space at the bottom
+        bc.plotOn(rc); // Bar chart needs to be plotted on a coordinate system
+
+// Just to demonstrate it, we are creating a "Download" and a "Zoom" toolbox button.
+        Toolbox toolbox = new Toolbox();
+        toolbox.addButton(new Toolbox.Download(), new Toolbox.Zoom());
+
+// Let's add some titles.
+        Title title = new Title("My First Chart");
+        title.setSubtext("2nd Line of the Title");
+
+// Add the chart components to the chart display area.
+        soChart.add(nc, bc, toolbox, title);
+
+// Now, add the chart display (which is a Vaadin Component) to your layout.
+        return soChart;
+    }
 
     private Splide slider(){
         ImageSlide slide1 = new ImageSlide("https://lh3.googleusercontent.com/z5ZYxxEMXyYZcnFbDnYg5HEMOUKUIvmgxp89ohL4NVHYomoa5PIS56JPg3FFSQ1DYb_rTlemD8RLsNBzYW1SFoG6L5C4DlC3osAP=w335");
