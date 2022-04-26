@@ -10,6 +10,8 @@ import com.vaadin.flow.router.Route;
 import javax.annotation.security.PermitAll;
 
 import static com.storedobject.vaadin.Application.message;
+import static com.vaadin.flow.dom.ElementUtil.setComponent;
+import static org.atmosphere.util.IOUtils.close;
 
 @Route(value = "rubiks", layout = MainLayout.class)
 @PageTitle("Rubiks | TwitchSnitch")
@@ -31,7 +33,7 @@ public class RubikView extends VerticalLayout {
     buttonLayout.add(move, shuffle, reset, exit);
     commandsField.addValueChangeListener(e -> move(e.getValue()));
     Div div = new Div(commandsField, buttonLayout, rubikCube);
-    setComponent(div);
+    add(div);
   }
 
   private void move(String move) {
