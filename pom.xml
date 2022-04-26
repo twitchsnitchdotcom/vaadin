@@ -149,6 +149,11 @@
                 </exclusion>
             </exclusions>
         </dependency>
+        <dependency>
+            <groupId>com.storedobject.chart</groupId>
+            <artifactId>so-charts</artifactId>
+            <version>2.4.1</version>
+        </dependency>
 <!--        <dependency>-->
 <!--            <groupId>com.storedobject.chart</groupId>-->
 <!--            <artifactId>so-charts</artifactId>-->
