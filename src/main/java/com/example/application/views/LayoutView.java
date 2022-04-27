@@ -1,12 +1,9 @@
 package com.example.application.views;
 
-import com.example.application.data.Book;
-import com.example.application.data.service.CrmService;
 import com.flowingcode.vaadin.addons.googlemaps.GoogleMap;
 import com.flowingcode.vaadin.addons.googlemaps.GoogleMapPoint;
 import com.flowingcode.vaadin.addons.googlemaps.GoogleMapPolygon;
 import com.flowingcode.vaadin.addons.googlemaps.LatLon;
-import com.flowingcode.vaadin.addons.twincolgrid.TwinColGrid;
 import com.vaadin.componentfactory.Chat;
 import com.vaadin.componentfactory.EnhancedRichTextEditor;
 import com.vaadin.componentfactory.model.Message;
@@ -18,8 +15,6 @@ import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.button.ButtonVariant;
 import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.icon.VaadinIcon;
-import com.vaadin.flow.component.map.Map;
-import com.vaadin.flow.component.map.configuration.Configuration;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
@@ -32,18 +27,18 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-@Route(value = "twitchchannel", layout = MainLayout.class)
-@PageTitle("Twitch Channel | TwitchSnitch")
+@Route(value = "layout", layout = MainLayout.class)
+@PageTitle("Layout")
 @PermitAll
-public class TwitchChannelView extends VerticalLayout {
+public class LayoutView extends VerticalLayout {
     private static int MESSAGE_LOAD_NUMBER = 100;
     private int messageStartNum1 = 0;
     private int messageStartNum2 = 0;
 
-    public TwitchChannelView() {
+    public LayoutView() {
         addClassName("dashboard-view");
         setDefaultHorizontalComponentAlignment(Alignment.CENTER);
-        add(richTextEditor(), timeline(), googleMaps());
+        add(googleMaps());
         // Component erstellen
         StarsRating starsRating = new StarsRating();
         // Listener Hinzufügen
@@ -58,7 +53,7 @@ public class TwitchChannelView extends VerticalLayout {
         });
 
         // Components zum Layout hinzufügen
-        add(starsRating, btn);
+        add(starsRating);
     }
     
     private GoogleMap googleMaps(){
@@ -75,48 +70,7 @@ public class TwitchChannelView extends VerticalLayout {
     }
 
 
-    private Timeline timeline(){
-        // create items
-        Item item1 = new Item(LocalDateTime.of(2021, 8, 11, 2, 30, 00),
-                LocalDateTime.of(2021, 8, 11, 8, 00, 00), "Item 1");
-        item1.setId("1");
 
-        Item item2 = new Item(LocalDateTime.of(2021, 8, 11, 9, 00, 00),
-                LocalDateTime.of(2021, 8, 11, 17, 00, 00), "Item 2");
-        item2.setId("2");
-
-        Item item3 = new Item(LocalDateTime.of(2021, 8, 12, 0, 30, 00),
-                LocalDateTime.of(2021, 8, 12, 3, 00, 00), "Item 3");
-        item3.setId("3");
-
-        Item item4 = new Item(LocalDateTime.of(2021, 8, 12, 4, 30, 00),
-                LocalDateTime.of(2021, 8, 12, 20, 00, 00), "Item 4");
-        item4.setId("4");
-
-        Item item5 = new Item(LocalDateTime.of(2021, 8, 12, 21, 30, 00),
-                LocalDateTime.of(2021, 8, 13, 01, 15, 00), "Item 5");
-        item5.setId("5");
-
-        List<Item> items = Arrays.asList(item1, item2, item3, item4, item5);
-
-        // make them editable
-        items.forEach(i -> {
-            i.setEditable(true);
-            i.setUpdateTime(true);
-        });
-
-        // create timeline
-        Timeline timeline = new Timeline(items);
-
-        // set timeline range
-        timeline.setTimelineRange(
-                LocalDateTime.of(2021, 8, 10, 00, 00, 00), LocalDateTime.of(2021, 8, 15, 00, 00, 00));
-
-        // set multiselection to timeline
-        timeline.setMultiselect(true);
-
-        return timeline;
-    }
 
     private Chat addBasicChat() {
         Chat chat = new Chat();
@@ -204,31 +158,7 @@ public class TwitchChannelView extends VerticalLayout {
         return list;
     }
 
-    public EnhancedRichTextEditor richTextEditor(){
-        EnhancedRichTextEditor rte = new EnhancedRichTextEditor();
 
-        Button textButton1 = new Button("");
-        textButton1.setIcon(VaadinIcon.AIRPLANE.create());
-        textButton1.addClickShortcut(Key.F8);
-        textButton1.getElement().setProperty("title", "Airplanes are flying machines.");
-        textButton1.addThemeVariants(ButtonVariant.LUMO_TERTIARY_INLINE);
-        textButton1.addClickListener(event -> {
-            rte.addText("Airplanes are flying machines. ");
-        });
-
-        Button textButton2 = new Button("");
-        textButton2.setIcon(VaadinIcon.DENTAL_CHAIR.create());
-        textButton2.addThemeVariants(ButtonVariant.LUMO_TERTIARY_INLINE);
-        textButton2.getElement().setProperty("title", "Dentists are drilling people.");
-        textButton2.addClickShortcut(Key.F9);
-        textButton2.addClickListener(event -> {
-            rte.addText("Dentists are drilling people. ");
-        });
-
-        rte.addCustomButtons(textButton1,textButton2);
-
-        return rte;
-    }
 
 
 }

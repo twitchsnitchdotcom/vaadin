@@ -32,15 +32,10 @@ public class NFTView extends VerticalLayout {
         this.service = service;
         addClassName("dashboard-view");
         setDefaultHorizontalComponentAlignment(Alignment.CENTER);
-        add(viz(), slider(), chart(), lineChart(), multipleLines(), circularTreeChart(), barChartReversed(), shapes());
+        add(slider(), chart(), lineChart(), multipleLines(), circularTreeChart(), barChartReversed(), shapes());
     }
 
-    private Component viz() {
-        Viz viz = new Viz(); // height: 300px - width: 600px
-        viz.setFormat(VizFormat.svg); // default
-        viz.setGraph("digraph H { a -> b }"); // simple dot notation
-        return viz;
-    }
+
 
     public Component lineChart() {
         // Creating a chart display area

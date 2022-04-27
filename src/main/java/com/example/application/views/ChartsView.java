@@ -24,12 +24,12 @@ public class ChartsView extends VerticalLayout {
         setDefaultHorizontalComponentAlignment(Alignment.CENTER);
         add(chartExample5(), chartExample2(), chartExample1(), chartExample6(), chartExample3(),
                 chartExample7(), chartExample4(), demoStackedBarChart(), barChartWIthLabelsInside(),
-                radarChartDemo(), dualFoolChat(), gaugeChart(), demoLineChart(), sunburstChart(),
-                funnelChart(), multipleNeedleGauge(), scatterChart(), bubbleChart(), heatMapChart(),
-                lineChartWithMarkArea(), lineChartWithTooltip(), gantChart(), xRangeChart(), activityChart());
+                radarChartDemo(), demoLineChart(), sunburstChart(),
+                funnelChart(), scatterChart(), bubbleChart(), heatMapChart(),
+                lineChartWithMarkArea(), lineChartWithTooltip(), gantChart());
     }
 
-    private Component scatterChart(){
+    private Component scatterChart() {
         // Creating a chart display area
         SOChart soChart = new SOChart();
         soChart.setSize("800px", "500px");
@@ -56,7 +56,7 @@ public class ChartsView extends VerticalLayout {
         return soChart;
     }
 
-    private Component bubbleChart(){
+    private Component bubbleChart() {
         // Creating a chart display area
         SOChart soChart = new SOChart();
         soChart.setSize("800px", "500px");
@@ -87,7 +87,7 @@ public class ChartsView extends VerticalLayout {
         return soChart;
     }
 
-    private Component heatMapChart(){
+    private Component heatMapChart() {
         // Creating a chart display area
         SOChart soChart = new SOChart();
         soChart.setSize("800px", "500px");
@@ -117,7 +117,7 @@ public class ChartsView extends VerticalLayout {
         return soChart;
     }
 
-    private Component lineChartWithMarkArea(){
+    private Component lineChartWithMarkArea() {
         // Creating a chart display area
         SOChart soChart = new SOChart();
         soChart.setSize("800px", "500px");
@@ -165,7 +165,7 @@ public class ChartsView extends VerticalLayout {
         return soChart;
     }
 
-    private Component lineChartWithTooltip(){
+    private Component lineChartWithTooltip() {
         // Creating a chart display area
         SOChart soChart = new SOChart();
         soChart.setSize("800px", "500px");
@@ -215,7 +215,7 @@ public class ChartsView extends VerticalLayout {
         return soChart;
     }
 
-    private Component gantChart(){
+    private Component gantChart() {
         // Define a chart component
         SOChart soChart = new SOChart();
         soChart.setSize("900px", "500px");
@@ -252,109 +252,109 @@ public class ChartsView extends VerticalLayout {
         return soChart;
     }
 
-    private Component xRangeChart(){
-        // Define a chart component
-        SOChart soChart = new SOChart();
-        soChart.setSize("100%", "100%");
+//    private Component xRangeChart() {
+//        // Define a chart component
+//        SOChart soChart = new SOChart();
+//        soChart.setSize("100%", "100%");
+//
+//        XRangeChart<Number, String> xrc1 = new XRangeChart<>(); // First chart
+//        // Add some range values
+//        xrc1.addData(4, 6, "Y5", new Color("red"));
+//        xrc1.addData(5, 8, "Y4", new Color("yellow"));
+//        xrc1.addData(1, 4, "Y4", "Delayed", new Color("pink"));
+//        xrc1.addData(8, 12, "Y2", new Color("blue"));
+//        xrc1.setYData(
+//                new CategoryData(
+//                        "Y1", "Y2", "Y3", "Y4", "Y5")); // We want the Y-axis to be of category type
+//        xrc1.getCoordinateSystem()
+//                .getPosition(true)
+//                .setBottom(Size.percentage(55)); // Leve 55% space below
+//        soChart.add(xrc1); // Add to the chart component
+//        XRangeChart<Number, Number> xrc2 = new XRangeChart<>(); // Second chart
+//        // Add some range values
+//        xrc2.addData(4, 6, 0, "Test Label", new Color("red"));
+//        xrc2.addData(4, 6, 5, "Another Label", new Color("red"));
+//        xrc2.addData(5, 8, 4, new Color("yellow"), 20);
+//        xrc2.addData(1, 4, 4, new Color("pink"), 50);
+//        xrc2.addData(8, 12, 2, "Completed", new Color("blue"), 100);
+//        xrc2.getCoordinateSystem()
+//                .getPosition(true)
+//                .setTop(Size.percentage(55)); // Leve 55% space above
+//        xrc2.getYAxis().setMax(6); // Y-axis is of numeric type (default). Setting max value
+//        xrc2.showProgressLabel(true); // Show progress values
+//        xrc2.getYAxis().setMin(-1); // Setting a custom min value
+//        xrc2.getXZoom(true); // Create X-axis zoom
+//        soChart.add(xrc2); // Add to the chart component
+//
+//        // Set the component for the view
+//        return soChart;
+//    }
 
-        XRangeChart<Number, String> xrc1 = new XRangeChart<>(); // First chart
-        // Add some range values
-        xrc1.addData(4, 6, "Y5", new Color("red"));
-        xrc1.addData(5, 8, "Y4", new Color("yellow"));
-        xrc1.addData(1, 4, "Y4", "Delayed", new Color("pink"));
-        xrc1.addData(8, 12, "Y2", new Color("blue"));
-        xrc1.setYData(
-                new CategoryData(
-                        "Y1", "Y2", "Y3", "Y4", "Y5")); // We want the Y-axis to be of category type
-        xrc1.getCoordinateSystem()
-                .getPosition(true)
-                .setBottom(Size.percentage(55)); // Leve 55% space below
-        soChart.add(xrc1); // Add to the chart component
-        XRangeChart<Number, Number> xrc2 = new XRangeChart<>(); // Second chart
-        // Add some range values
-        xrc2.addData(4, 6, 0, "Test Label", new Color("red"));
-        xrc2.addData(4, 6, 5, "Another Label", new Color("red"));
-        xrc2.addData(5, 8, 4, new Color("yellow"), 20);
-        xrc2.addData(1, 4, 4, new Color("pink"), 50);
-        xrc2.addData(8, 12, 2, "Completed", new Color("blue"), 100);
-        xrc2.getCoordinateSystem()
-                .getPosition(true)
-                .setTop(Size.percentage(55)); // Leve 55% space above
-        xrc2.getYAxis().setMax(6); // Y-axis is of numeric type (default). Setting max value
-        xrc2.showProgressLabel(true); // Show progress values
-        xrc2.getYAxis().setMin(-1); // Setting a custom min value
-        xrc2.getXZoom(true); // Create X-axis zoom
-        soChart.add(xrc2); // Add to the chart component
+//    private Component activityChart() {
+//        // Define a chart component
+//        SOChart soChart = new SOChart();
+//        soChart.setWidth("100%");
+//
+//        // Activity list
+//        ActivityList activityList = new ActivityList();
+//        activityList.setStart(LocalDateTime.now()); // Set the start date
+//        // Create some activities
+//        ActivityList.ActivityGroup tg1 = activityList.createActivityGroup("Group 1"); // Group 1
+//        tg1.setExtraInfo("Cleaning activities"); // Some extra info
+//        ActivityList.Activity tg1T1 = // An activity that belongs to group 1
+//                tg1.createActivity("Activity 1/1", LocalDateTime.now().minusDays(10), 6);
+//        // Add another one just after the first onw
+//        ActivityList.Activity tg1T2 = tg1T1.createNext("Activity 1/2", 5);
+//        tg1T2.setCompleted(100); // This activity is 100% done
+//        ActivityList.Activity tg1T3 = tg1T2.createNext("Activity 1/3", 11); // Next
+//        tg1T3
+//                .createNext("Activity 1/4", 10)
+//                .setExtraInfo("Some extra info"); // Extra info: Will be shown as part of the tooltip
+//        ActivityList.ActivityGroup tg2 = activityList.createActivityGroup("Group 2"); // Group 2
+//        tg2.setExtraInfo("Other tasks"); // Some extra info
+//        // Add some activities under group 2 too
+//        ActivityList.Activity tg2T1 = tg2.createActivity("Activity 2/1", LocalDateTime.now(), 3);
+//        ActivityList.Activity tg2T2 = tg2T1.createNext("Activity 2/2", 7);
+//        ActivityList.Activity tg2T3 = tg2T2.createNext("Activity 2/3", 13);
+//        tg2T3.createNext("Activity 2/4", 9);
+//        tg2T3.setColor(new Color("green")); // Specific color for this task
+//        tg2T1.setCompleted(35); // This activity is 35% complete
+//
+//        // Plot the activities on an Activity Chart
+//        ActivityChart ac = new ActivityChart(activityList);
+//        ac.getTimeAxisZoom().hide(); // Hiding the time-axis zoom
+//
+//        // Add the chart to the chart component
+//        soChart.add(ac);
+//
+//        // Set the component for the view
+//        return soChart;
+//    }
 
-        // Set the component for the view
-        return soChart;
-    }
+//    private Component multipleNeedleGauge() {
+//        // Creating a chart display area
+//        SOChart soChart = new SOChart();
+//        soChart.setSize("800px", "500px");
+//
+//        // Gauge chart
+//        GaugeChart gc = new GaugeChart();
+//        gc.setMin(0);
+//        gc.setMax(240);
+//        gc.setValue(96);
+//        Label label = gc.getAxisLabel(true);
+//        label.setFontStyle(new Font(null, Font.Size.number(10)));
+//        label.setFormatter("{value}km/h");
+//        gc.addDialZone(50, new Color("blue"));
+//        gc.addDialZone(80, new Color(255, 246, 0));
+//        gc.addDialZone(100, new Color("red"));
+//
+//        // Add it to the chart display
+//        soChart.add(gc);
+//
+//        return soChart;
+//    }
 
-    private Component activityChart(){
-        // Define a chart component
-        SOChart soChart = new SOChart();
-        soChart.setWidth("100%");
-
-        // Activity list
-        ActivityList activityList = new ActivityList();
-        activityList.setStart(LocalDateTime.now()); // Set the start date
-        // Create some activities
-        ActivityList.ActivityGroup tg1 = activityList.createActivityGroup("Group 1"); // Group 1
-        tg1.setExtraInfo("Cleaning activities"); // Some extra info
-        ActivityList.Activity tg1T1 = // An activity that belongs to group 1
-                tg1.createActivity("Activity 1/1", LocalDateTime.now().minusDays(10), 6);
-        // Add another one just after the first onw
-        ActivityList.Activity tg1T2 = tg1T1.createNext("Activity 1/2", 5);
-        tg1T2.setCompleted(100); // This activity is 100% done
-        ActivityList.Activity tg1T3 = tg1T2.createNext("Activity 1/3", 11); // Next
-        tg1T3
-                .createNext("Activity 1/4", 10)
-                .setExtraInfo("Some extra info"); // Extra info: Will be shown as part of the tooltip
-        ActivityList.ActivityGroup tg2 = activityList.createActivityGroup("Group 2"); // Group 2
-        tg2.setExtraInfo("Other tasks"); // Some extra info
-        // Add some activities under group 2 too
-        ActivityList.Activity tg2T1 = tg2.createActivity("Activity 2/1", LocalDateTime.now(), 3);
-        ActivityList.Activity tg2T2 = tg2T1.createNext("Activity 2/2", 7);
-        ActivityList.Activity tg2T3 = tg2T2.createNext("Activity 2/3", 13);
-        tg2T3.createNext("Activity 2/4", 9);
-        tg2T3.setColor(new Color("green")); // Specific color for this task
-        tg2T1.setCompleted(35); // This activity is 35% complete
-
-        // Plot the activities on an Activity Chart
-        ActivityChart ac = new ActivityChart(activityList);
-        ac.getTimeAxisZoom().hide(); // Hiding the time-axis zoom
-
-        // Add the chart to the chart component
-        soChart.add(ac);
-
-        // Set the component for the view
-        return soChart;
-    }
-
-    private Component multipleNeedleGauge(){
-        // Creating a chart display area
-        SOChart soChart = new SOChart();
-        soChart.setSize("800px", "500px");
-
-        // Gauge chart
-        GaugeChart gc = new GaugeChart();
-        gc.setMin(0);
-        gc.setMax(240);
-        gc.setValue(96);
-        Label label = gc.getAxisLabel(true);
-        label.setFontStyle(new Font(null, Font.Size.number(10)));
-        label.setFormatter("{value}km/h");
-        gc.addDialZone(50, new Color("blue"));
-        gc.addDialZone(80, new Color(255, 246, 0));
-        gc.addDialZone(100, new Color("red"));
-
-        // Add it to the chart display
-        soChart.add(gc);
-
-        return soChart;
-    }
-
-    private Component funnelChart(){
+    private Component funnelChart() {
         SOChart soChart = new SOChart();
         soChart.setSize("800px", "500px");
         FunnelChart fc =
@@ -366,7 +366,7 @@ public class ChartsView extends VerticalLayout {
         return soChart;
     }
 
-    private Component sunburstChart(){
+    private Component sunburstChart() {
 
         // Creating a chart display area
         SOChart soChart = new SOChart();
@@ -392,7 +392,7 @@ public class ChartsView extends VerticalLayout {
         return soChart;
     }
 
-    private Component demoLineChart(){
+    private Component demoLineChart() {
         // Creating a chart display area
         SOChart soChart = new SOChart();
         soChart.setSize("800px", "500px");
@@ -455,69 +455,70 @@ public class ChartsView extends VerticalLayout {
         return soChart;
     }
 
-    private Component gaugeChart(){
-        // Creating a chart display area
-        SOChart soChart = new SOChart();
-        soChart.setSize("800px", "500px");
+//    private Component gaugeChart() {
+//        // Creating a chart display area
+//        SOChart soChart = new SOChart();
+//        soChart.setSize("800px", "500px");
+//
+//        // Gauge chart
+//        GaugeChart gaugeChart = new GaugeChart();
+//        gaugeChart.setValue(36);
+//
+//        // Add it to the chart display
+//        soChart.add(gaugeChart);
+//
+//        return soChart;
+//    }
 
-        // Gauge chart
-        GaugeChart gaugeChart = new GaugeChart();
-        gaugeChart.setValue(36);
+//    private Component dualFoolChat() {
+//        // Creating a chart display area
+//        SOChart soChart = new SOChart();
+//        soChart.setSize("900px", "500px");
+//
+//        // Let us define some inline data
+//        CategoryData labels =
+//                new CategoryData("April Fool's Day", "Marriage Day", "Election Day", "Any Other Day");
+//        Data data = new Data(5, 20, 100, 2);
+//
+//        // Axes
+//        XAxis xAxis;
+//        YAxis yAxis;
+//
+//        // Bar chart
+//        BarChart bc1 = new BarChart(labels, data); // First bar chart
+//        xAxis = new XAxis(labels);
+//        xAxis.getLabel(true).setRotation(45);
+//        yAxis = new YAxis(data);
+//        RectangularCoordinate coordinate = new RectangularCoordinate(xAxis, yAxis);
+//        bc1.plotOn(coordinate); // Bar chart needs to be plotted on a coordinate system
+//        coordinate.getPosition(true).setRight(Size.percentage(60)); // Leave space on the right side
+//
+//        BarChart bc2 = new BarChart(data, labels); // Second bar chart - axes reversed
+//        xAxis = new XAxis(data);
+//        yAxis = new YAxis(labels);
+//        coordinate = new RectangularCoordinate(xAxis, yAxis);
+//        bc2.plotOn(coordinate); // Bar chart needs to be plotted on a coordinate system
+//        coordinate.getPosition(true).setLeft(Size.percentage(60)); // Leave space on the left side
+//
+//        // Just to demonstrate it, we are creating a "Download" and a "Zoom" toolbox button
+//        Toolbox toolbox = new Toolbox();
+//        toolbox.addButton(new Toolbox.Download(), new Toolbox.Zoom());
+//
+//        // Switching off the default legend
+//        soChart.disableDefaultLegend();
+//
+//        // Let's add some titles
+//        Title title = new Title("Probability of Getting Fooled");
+//        title.setSubtext("Truth is always simple but mostly hidden - Syam");
+//
+//        // Add the chart components to the chart display area
+//        soChart.add(bc1, bc2, toolbox, title);
+//
+//        // Set the component for the view - our chart wrapped in a layout.
+//        return soChart;
+//    }
 
-        // Add it to the chart display
-        soChart.add(gaugeChart);
-
-        return soChart;
-    }
-    private Component dualFoolChat(){
-        // Creating a chart display area
-        SOChart soChart = new SOChart();
-        soChart.setSize("900px", "500px");
-
-        // Let us define some inline data
-        CategoryData labels =
-                new CategoryData("April Fool's Day", "Marriage Day", "Election Day", "Any Other Day");
-        Data data = new Data(5, 20, 100, 2);
-
-        // Axes
-        XAxis xAxis;
-        YAxis yAxis;
-
-        // Bar chart
-        BarChart bc1 = new BarChart(labels, data); // First bar chart
-        xAxis = new XAxis(labels);
-        xAxis.getLabel(true).setRotation(45);
-        yAxis = new YAxis(data);
-        RectangularCoordinate coordinate = new RectangularCoordinate(xAxis, yAxis);
-        bc1.plotOn(coordinate); // Bar chart needs to be plotted on a coordinate system
-        coordinate.getPosition(true).setRight(Size.percentage(60)); // Leave space on the right side
-
-        BarChart bc2 = new BarChart(data, labels); // Second bar chart - axes reversed
-        xAxis = new XAxis(data);
-        yAxis = new YAxis(labels);
-        coordinate = new RectangularCoordinate(xAxis, yAxis);
-        bc2.plotOn(coordinate); // Bar chart needs to be plotted on a coordinate system
-        coordinate.getPosition(true).setLeft(Size.percentage(60)); // Leave space on the left side
-
-        // Just to demonstrate it, we are creating a "Download" and a "Zoom" toolbox button
-        Toolbox toolbox = new Toolbox();
-        toolbox.addButton(new Toolbox.Download(), new Toolbox.Zoom());
-
-        // Switching off the default legend
-        soChart.disableDefaultLegend();
-
-        // Let's add some titles
-        Title title = new Title("Probability of Getting Fooled");
-        title.setSubtext("Truth is always simple but mostly hidden - Syam");
-
-        // Add the chart components to the chart display area
-        soChart.add(bc1, bc2, toolbox, title);
-
-        // Set the component for the view - our chart wrapped in a layout.
-        return soChart;
-    }
-
-    private Component radarChartDemo(){
+    private Component radarChartDemo() {
         // Creating a chart display area
         SOChart soChart = new SOChart();
         soChart.setSize("800px", "500px");
@@ -544,8 +545,8 @@ public class ChartsView extends VerticalLayout {
         // Set the component for the view
         return soChart;
     }
-    
-    private Component barChartWIthLabelsInside(){
+
+    private Component barChartWIthLabelsInside() {
         // Creating a chart display area
         SOChart soChart = new SOChart();
         soChart.setSize("800px", "500px");
@@ -609,7 +610,7 @@ public class ChartsView extends VerticalLayout {
         return soChart;
     }
 
-    private Component demoStackedBarChart(){
+    private Component demoStackedBarChart() {
         // Creating a chart display area
         SOChart soChart = new SOChart();
         soChart.setSize("800px", "500px");
@@ -670,8 +671,8 @@ public class ChartsView extends VerticalLayout {
         // Set the component for the view
         return soChart;
     }
-    
-    private Component chartExample4(){
+
+    private Component chartExample4() {
         // Creating a chart display area
         SOChart soChart = new SOChart();
         soChart.setSize("800px", "500px");
@@ -703,7 +704,7 @@ public class ChartsView extends VerticalLayout {
     }
 
 
-    private Component chartExample7(){
+    private Component chartExample7() {
         // Creating a chart display area
         SOChart soChart = new SOChart();
         soChart.setSize("800px", "500px");
@@ -760,7 +761,7 @@ public class ChartsView extends VerticalLayout {
         return soChart;
     }
 
-    private Component chartExample3(){
+    private Component chartExample3() {
         SOChart soChart = new SOChart();
         soChart.setSize("600px", "650px");
 
@@ -812,7 +813,8 @@ public class ChartsView extends VerticalLayout {
         // Set the component for the view
         return soChart;
     }
-    private Component chartExample6(){
+
+    private Component chartExample6() {
 
         // Creating a chart display area
         SOChart soChart = new SOChart();
@@ -874,7 +876,8 @@ public class ChartsView extends VerticalLayout {
         }
         return soChart;
     }
-    private Component chartExample1(){
+
+    private Component chartExample1() {
         // Creating a chart display area
         SOChart soChart = new SOChart();
         soChart.setSize("800px", "500px");
@@ -913,38 +916,38 @@ public class ChartsView extends VerticalLayout {
     }
 
 
-private Component chartExample2(){
-    // Creating a chart display area
-    SOChart soChart = new SOChart();
-    soChart.setSize("800px", "500px");
+    private Component chartExample2() {
+        // Creating a chart display area
+        SOChart soChart = new SOChart();
+        soChart.setSize("800px", "500px");
 
-    // Generating some random values for a LineChart
-    Random random = new Random();
-    Data xValues = new Data(), yValues = new Data();
-    for (int x = 0; x < 40; x++) {
-        xValues.add(x);
-        yValues.add(random.nextDouble());
+        // Generating some random values for a LineChart
+        Random random = new Random();
+        Data xValues = new Data(), yValues = new Data();
+        for (int x = 0; x < 40; x++) {
+            xValues.add(x);
+            yValues.add(random.nextDouble());
+        }
+        xValues.setName("X Values");
+        yValues.setName("Random Values");
+
+        // Line chart is initialized with the generated XY values
+        LineChart lineChart = new LineChart(xValues, yValues);
+        lineChart.setName("40 Random Values");
+
+        // Line chart needs a coordinate system to plot on
+        // We need Number-type for both X and Y axes in this case
+        XAxis xAxis = new XAxis(DataType.NUMBER);
+        YAxis yAxis = new YAxis(DataType.NUMBER);
+        RectangularCoordinate rc = new RectangularCoordinate(xAxis, yAxis);
+        lineChart.plotOn(rc);
+
+        // Add to the chart display area with a simple title
+        soChart.add(lineChart, new Title("Sample Line Chart"));
+
+        // Set the component for the view
+        return soChart;
     }
-    xValues.setName("X Values");
-    yValues.setName("Random Values");
-
-    // Line chart is initialized with the generated XY values
-    LineChart lineChart = new LineChart(xValues, yValues);
-    lineChart.setName("40 Random Values");
-
-    // Line chart needs a coordinate system to plot on
-    // We need Number-type for both X and Y axes in this case
-    XAxis xAxis = new XAxis(DataType.NUMBER);
-    YAxis yAxis = new YAxis(DataType.NUMBER);
-    RectangularCoordinate rc = new RectangularCoordinate(xAxis, yAxis);
-    lineChart.plotOn(rc);
-
-    // Add to the chart display area with a simple title
-    soChart.add(lineChart, new Title("Sample Line Chart"));
-
-    // Set the component for the view
-    return soChart;
-}
 
     private Component chartExample5() {
 
